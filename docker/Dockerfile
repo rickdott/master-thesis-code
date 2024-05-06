@@ -5,20 +5,16 @@ FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 RUN apt-get update && apt-get install -y git \
     && pip install jupyter
 
-# Install hmp-ai python package
-WORKDIR /tmp
-RUN git clone https://github.com/rickdott/hmp-ai.git \
-    && pip install ./hmp-ai/src
-
 # Upgrade pip
+WORKDIR /tmp
 RUN python -m pip install --upgrade pip
 
 # Requirements.txt must be in the same folder as this dockerfile, contains the packages
 # TODO: Automatically pull requirements from github package?
-ADD requirements.txt .
+ADD ./master-thesis-code/docker/requirements.txt .
 RUN python -m pip install -r requirements.txt
 
 WORKDIR /workspace
 
-# Get code for visualizing and training models
-RUN git clone https://github.com/rickdott/master-thesis-code.git
+COPY ./hmp-ai /workspace/hmp-ai
+RUN python -m pip install -e /workspace/hmp-ai/src

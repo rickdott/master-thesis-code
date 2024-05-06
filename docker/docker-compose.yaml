@@ -1,0 +1,10 @@
+services:
+  hmpai:
+    stdin_open: true
+    build:
+      context: ../../
+      dockerfile: ./master-thesis-code/docker/Dockerfile
+    volumes:
+      - ../../hmp-ai:/workspace/hmp-ai
+      - ../../master-thesis-code:/workspace/master-thesis-code
+      # Add network disk volume for data here
