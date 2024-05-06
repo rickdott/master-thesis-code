@@ -5,6 +5,7 @@ services:
       context: ../../
       dockerfile: ./master-thesis-code/docker/Dockerfile
     volumes:
-      - ../../hmp-ai:/workspace/hmp-ai
+      - ../../hmp-ai:/workspace/hmp-ai # First copy and install (see Dockerfile), then mount so changes are reflected
+      - ../../hmp:/workspace/hmp # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../master-thesis-code:/workspace/master-thesis-code
       # Add network disk volume for data here

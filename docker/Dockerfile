@@ -18,3 +18,6 @@ WORKDIR /workspace
 
 COPY ./hmp-ai /workspace/hmp-ai
 RUN python -m pip install -e /workspace/hmp-ai/src
+
+# COPY ./hmp /workspace/hmp
+# RUN python -m pip install -e /workspace/hmp
