@@ -1,5 +1,5 @@
 captum==0.7.0
-hsmm_mvpy==0.3.1.1
+hmp==0.3.2
 matplotlib==3.7.0
 mne==1.7.0
 numpy==1.23.3

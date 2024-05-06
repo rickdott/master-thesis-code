@@ -7,6 +7,9 @@ data/*/*/*.fif
 models/*
 !models/README.md
 
+*.nc
+*.fif
+*.npz
 # Ignore model checkpoints
 *.pt
 
