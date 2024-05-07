@@ -1,5 +1,8 @@
 services:
   hmpai:
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
     stdin_open: true
     build:
       context: ../../
@@ -8,4 +11,5 @@ services:
       - ../../hmp-ai:/workspace/hmp-ai # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../hmp:/workspace/hmp # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../master-thesis-code:/workspace/master-thesis-code
+      # - O:\Research\FSW\Research_data\PF\Leerstoel Stigchel\Rick Otter:/workspace/data
       # Add network disk volume for data here

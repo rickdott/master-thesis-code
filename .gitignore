@@ -7,6 +7,8 @@ data/*/*/*.fif
 models/*
 !models/README.md
 
+docker/mount_drive.sh
+
 *.nc
 *.fif
 *.npz

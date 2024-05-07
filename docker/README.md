@@ -8,10 +8,12 @@ GIT/\
 ├── master-thesis-code/\
 │ ├── docker/\
 │ │ └── README.md #this file\
-├── hmp-ai/
+├── hmp-ai/\
+├── hmp/ # Optionally
 
-3. Open command line in the /docker directory.
-4. Run `docker-compose up -d`, this will do anything required to build and start the image.
+3. Make a copy of `mount_drive_EXAMPLE.sh` and rename it to `mount_drive.sh`, open it in a text editor and replace `<solid-id>` and `<password>` with your solis-id (only the number) and password. Make sure you are authorized by tech support to read and write to the folder in `mount_drive.sh`.
+4. Open command line in the /docker directory.
+5. Run `docker-compose up -d`, this will do anything required to build and start the image.
 
 ### Running code inside the Docker image
 1. Install Visual Studio Code
