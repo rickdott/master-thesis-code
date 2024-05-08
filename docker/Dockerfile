@@ -26,6 +26,8 @@ RUN python -m pip install -e /workspace/hmp-ai/src
 # RUN python -m pip install -e /workspace/hmp
 
 # Mounting must be done with added capabilities that are only available after running the dockerfile, so start by running a script that contains that info
-COPY ./master-thesis-code/docker/mount_drive.sh /usr/local/bin/mount_drive.sh
+COPY ./master-thesis-code/docker/mount_drive.sh /tmp/mount_drive.sh
+RUN chmod +rwx /tmp/mount_drive.sh
 RUN mkdir /workspace/data
-CMD /usr/local/bin/mount_drive.sh 
+ENTRYPOINT /tmp/mount_drive.sh 
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
