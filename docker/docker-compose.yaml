@@ -16,3 +16,10 @@ services:
       - ../../master-thesis-code:/workspace/master-thesis-code
       # - O:\Research\FSW\Research_data\PF\Leerstoel Stigchel\Rick Otter:/workspace/data
       # Add network disk volume for data here
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
