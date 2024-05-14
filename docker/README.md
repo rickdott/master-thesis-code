@@ -14,16 +14,14 @@ GIT/\
 >    Optionally clone the [hmp](https://github.com/GWeindel/hmp) repository if you want to use a more recent version or add manual changes to HMP functionality. If you do this, uncomment the corresponding lines in the Dockerfile.
 
 3. Make a copy of `.env_EXAMPLE` and rename it to `.env`, change the DATA_PATH variable to represent the location inside the Docker container that has the data, mounted from a network share or locally. Edit SOLIS_ID and PASSWORD to represent your UU credentials. This file is not pushed to git repositories and the PASSWORD environment variable is removed after using it to mount the network share. Make sure you are authorized by tech support to read and write to the folder in `mount_drive.sh`.
-
 4. Open command line/terminal in the /docker directory.
-
 5. Run `docker compose build` and then `docker compose up -d`, this will do everything required to build and start the image.
-
 6. You can open a terminal inside the running Docker container by running `docker exec -it hmp-ai /bin/bash`.
 
 ### Running code inside the Docker image
 1. Install Visual Studio Code (You run it from the command line by using `code .` to open a VSCode instance in the current directory)
 2. Install the 'Docker' extension for VSCode
 3. A whale has found its way into your VS Code sidebar, click on it, right-click the running Docker container and click 'Attach Visual Studio Code', find the `/workspace` directory, going up a directory if `/root` is automatically selected. Changes you make to files in `master-thesis-code` or `hmp-ai` are synchronized on your host machine and the docker container. This allows you to run code in the container and edit it locally or in the container, whichever is preferred. This approach ensures one source of truth for the code.
+4. Make sure that the notebooks use the `base` conda kernel (selector top-right)
 
 You are now able to work inside the Docker container.
