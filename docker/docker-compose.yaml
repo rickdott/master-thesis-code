@@ -1,5 +1,6 @@
 services:
   hmpai:
+    container_name: hmp-ai
     cap_add:
       - SYS_ADMIN
       - DAC_READ_SEARCH
@@ -14,7 +15,10 @@ services:
       - ../../hmp-ai:/workspace/hmp-ai # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../hmp:/workspace/hmp # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../master-thesis-code:/workspace/master-thesis-code
-      # - O:\Research\FSW\Research_data\PF\Leerstoel Stigchel\Rick Otter:/workspace/data
+      # Change this path to where the data was copied to on the VM
+      # Remove this if mount_drive.sh is used and data is loaded from the network share
+      # This was added because loading files from smb network share happens at about 30 MB/s
+      - '/media/labgenius/Local data/data/data:/workspace/data_local'
       # Add network disk volume for data here
     deploy:
       resources:
