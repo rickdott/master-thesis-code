@@ -11,10 +11,14 @@ GIT/\
 ├── hmp-ai/\
 ├── hmp/ (Optionally)
 
-Optionally clone the [hmp](https://github.com/GWeindel/hmp) repository if you want to use a more recent version or add manual changes to HMP functionality. If you do this, uncomment the corresponding lines in the Dockerfile.
+>    Optionally clone the [hmp](https://github.com/GWeindel/hmp) repository if you want to use a more recent version or add manual changes to HMP functionality. If you do this, uncomment the corresponding lines in the Dockerfile.
+
 3. Make a copy of `mount_drive_EXAMPLE.sh` and rename it to `mount_drive.sh`, open it in a text editor and replace `<solid-id>` and `<password>` with your solis-id (only the number) and password. Make sure you are authorized by tech support to read and write to the folder in `mount_drive.sh`.
+
 4. Open command line/terminal in the /docker directory.
+
 5. Run `docker compose build` and then `docker compose up -d`, this will do everything required to build and start the image.
+
 6. You can open a terminal inside the running Docker container by running `docker exec -it hmp-ai /bin/bash`.
 
 ### Running code inside the Docker image
