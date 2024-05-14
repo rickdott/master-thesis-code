@@ -20,6 +20,11 @@ services:
       # This was added because loading files from smb network share happens at about 30 MB/s
       - '/media/labgenius/Local data/data/data:/workspace/data_local'
       # Add network disk volume for data here
+    
+    environment:
+      DATA_PATH: ${DATA_PATH}
+      SOLIS_ID: ${SOLIS_ID}
+      PASSWORD: ${PASSWORD}
     deploy:
       resources:
         reservations:
