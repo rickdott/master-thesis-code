@@ -22,8 +22,8 @@ COPY ./hmp-ai /workspace/hmp-ai
 RUN python -m pip install -e /workspace/hmp-ai/src
 
 # Uncomment this if you want to use a custom version of hmp
-# COPY ./hmp /workspace/hmp
-# RUN python -m pip install -e /workspace/hmp
+COPY ./hmp /workspace/hmp
+RUN python -m pip install -e /workspace/hmp
 
 # Mounting must be done with added capabilities that are only available after running the dockerfile, so start by running a script that contains that info
 COPY ./master-thesis-code/docker/mount_drive.sh /tmp/mount_drive.sh
