@@ -2,8 +2,8 @@ captum==0.7.0
 hmp==0.3.2
 matplotlib==3.7.0
 mne==1.7.0
-numpy==1.23.3
-pandas==1.5.0
+numpy==1.23.5
+pandas==2.2.2
 scikit_learn==1.4.2
 scipy==1.9.1
 seaborn==0.13.2
@@ -11,6 +11,9 @@ setuptools==56.0.0
 torchinfo==1.8.0
 torchvision==0.18.0
 tqdm==4.66.2
-xarray==2024.3.0
+xarray==2024.7.0
 tensorboard==2.16.2
 ipywidgets==8.1.2
+pyEDFlib==0.1.38
+braindecode==0.8.1
+mamba-ssm==2.2.2
