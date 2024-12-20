@@ -11,6 +11,7 @@ services:
     build:
       context: ../../
       dockerfile: ./master-thesis-code/docker/Dockerfile
+    shm_size: '2gb'
     volumes:
       - ../../hmp-ai:/workspace/hmp-ai # First copy and install (see Dockerfile), then mount so changes are reflected
       - ../../hmp:/workspace/hmp # First copy and install (see Dockerfile), then mount so changes are reflected
