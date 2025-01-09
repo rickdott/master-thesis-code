@@ -1,5 +1,5 @@
 # Base image found at https://hub.docker.com/r/pytorch/pytorch/tags
-FROM pytorch/pytorch:2.3.1-cuda11.8-cudnn8-devel
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
 
 # Install git and jupyter, git is not necessary for this barebones install but may be needed to pull other repositories
 RUN apt-get update && apt-get install -y git \
