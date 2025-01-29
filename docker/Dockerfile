@@ -1,5 +1,5 @@
 # Base image found at https://hub.docker.com/r/pytorch/pytorch/tags
-FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
 
 # Install git and jupyter, git is not necessary for this barebones install but may be needed to pull other repositories
 RUN apt-get update && apt-get install -y git \
@@ -25,6 +25,7 @@ RUN python -m pip install -e /workspace/hmp-ai/src
 COPY ./hmp /workspace/hmp
 RUN python -m pip install -e /workspace/hmp
 
+COPY ./master-thesis-code/docker/pyrightconfig.json /workspace
 # Mounting must be done with added capabilities that are only available after running the dockerfile, so start by running a script that contains that info
 COPY ./master-thesis-code/docker/mount_drive.sh /tmp/mount_drive.sh
 RUN chmod +rwx /tmp/mount_drive.sh
